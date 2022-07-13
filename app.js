@@ -1,15 +1,28 @@
-const PI = 3.14;
+/*Arrow Functions Exercise*/
 
-/*Quiz*/
-//What is the difference between var and let?
+function double(arr) {
+    return arr.map(function(val) {
+        return val * 2;
+    });
+}
 
-//Var is scoped to the function where as let is scoped to the code block
+// // Refactor the above code to use two arrow functions. Turn it into a one-liner
 
-//What is the difference between VAR and const?
-//VAR can be re-declared whereas const cannot.  
 
-//What is the difference between let and const?
-//Both block scoped, let can be re-declared whereas const cannot.  Both can be mutated.
+// function double(arr) { arr.map(val => val * 2 )}
 
-//What is hoisting?
-//Javascript, by default, moves all declarations to the top of the current scope.  This can affect the use of VAR so it is not recommended, where possible to use it.
+const double2 = arr => arr.map (val => val * 2);
+
+//Refactor the following functions to use arrow functions:
+
+function squareAndFindEvens(numbers) {
+    var squares = numbers.map(function(num){
+        return num ** 2;
+    });
+    var evens = squares.filter(function(square) {
+        return square % 2 === 0;
+    });
+    return evens;
+}
+
+const squareAndFindEvens = numbers => numbers.map(num => num ** 2).filter(square => square % 2 === 0)
